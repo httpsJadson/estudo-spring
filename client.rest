@@ -1,0 +1,16 @@
+@baseurl = http://localhost:8080
+
+### GET USERS
+GET {{baseurl}}/users
+
+### Post USERS
+
+POST {{baseurl}}/users
+Content-Type: application/json
+{
+    "name": "morpheus",
+    "phone": "1234567890",
+    "email": "morpheus@example.com",
+    "password": "123456"
+}
+

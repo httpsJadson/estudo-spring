@@ -1,8 +1,12 @@
 package com.jadsonspring.course.entities;
-import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
@@ -10,7 +14,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String name;
     private String phone;
     private String email;
@@ -20,7 +24,7 @@ public class User implements Serializable {
 
     }
 
-    public User(long id, String name, String phone, String email, String password) {
+    public User(Long id, String name, String phone, String email, String password) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -32,7 +36,7 @@ public class User implements Serializable {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

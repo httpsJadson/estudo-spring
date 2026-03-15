@@ -32,7 +32,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -76,7 +76,7 @@ public class User implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id;
+        return id.equals(user.id);
     }
 
     @Override

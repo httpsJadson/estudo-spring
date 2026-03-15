@@ -3,6 +3,9 @@
 ### GET USERS
 GET {{baseurl}}/users
 
+### GET USER
+GET {{baseurl}}/users/2
+
 ### Post USERS
 
 POST {{baseurl}}/users

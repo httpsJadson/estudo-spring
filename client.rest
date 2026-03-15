@@ -10,10 +10,26 @@ GET {{baseurl}}/users/2
 
 POST {{baseurl}}/users
 Content-Type: application/json
+
 {
     "name": "morpheus",
     "phone": "1234567890",
     "email": "morpheus@example.com",
     "password": "123456"
 }
+
+### PATCH USERS
+
+PATCH {{baseurl}}/users/2
+Content-Type: application/json
+
+{
+    "name": "morpheus",
+    "phone": "1234567890"
+}
+
+### DELETE USERS
+
+DELETE {{baseurl}}/users/2
+
 

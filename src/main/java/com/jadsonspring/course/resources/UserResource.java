@@ -2,10 +2,7 @@ package com.jadsonspring.course.resources;
 import com.jadsonspring.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.jadsonspring.course.entities.User;
 
@@ -18,16 +15,31 @@ public class UserResource {
     @Autowired
     private UserService service;
 
+    @PostMapping()
+    public User create(@RequestBody User user){
+        return service.create(user);
+    }
+
     @GetMapping()
     public ResponseEntity<List<User>> FindAll(){
         List<User> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> FindById(@PathVariable Long id){
         User obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @PatchMapping("/{id}")
+    public User update(@PathVariable Long id, @RequestBody User user){
+        return service.update(id, user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 
 }

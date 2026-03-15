@@ -1,7 +1,7 @@
 @baseurl = http://localhost:8080
 
 ### GET USERS
-GET {{baseurl}}/users
+GET {{baseurl}}/orders
 
 ### GET USER
 GET {{baseurl}}/users/2
